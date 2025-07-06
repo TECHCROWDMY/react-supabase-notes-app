@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { supabase } from './supabase';
 import './Notes.css';
+import Navbar from './Navbar';
 
 export default function Notes() {
   const [notes, setNotes] = useState([]);
@@ -43,30 +44,33 @@ export default function Notes() {
   }, []);
 
   return (
-    <div className="notes-bg">
-      <div className="notes-container">
-        <h2>Your Notes</h2>
+    <>
+      <Navbar />
+      <div className="notes-bg">
+        <div className="notes-container">
+          <h2>Your Notes</h2>
 
-        <textarea
-          className="note-input"
-          value={newNote}
-          onChange={(e) => setNewNote(e.target.value)}
-          placeholder="Type your note..."
-        />
+          <textarea
+            className="note-input"
+            value={newNote}
+            onChange={(e) => setNewNote(e.target.value)}
+            placeholder="Type your note..."
+          />
 
-        <div className="add-btn-wrapper">
-          <button className="add-btn" onClick={addNote}>Add Note</button>
-        </div>
+          <div className="add-btn-wrapper">
+            <button className="add-btn" onClick={addNote}>Add Note</button>
+          </div>
 
-        <div className="note-list">
-          {notes.map((note) => (
-            <div key={note.id} className="note-card">
-              <p>{note.content}</p>
-              <small>{new Date(note.inserted_at).toLocaleString()}</small>
-            </div>
-          ))}
+          <div className="note-list">
+            {notes.map((note) => (
+              <div key={note.id} className="note-card">
+                <p>{note.content}</p>
+                <small>{new Date(note.inserted_at).toLocaleString()}</small>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

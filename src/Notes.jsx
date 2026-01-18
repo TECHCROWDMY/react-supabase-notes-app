@@ -1,52 +1,39 @@
 // Notes.jsx
 
 import { useEffect, useState } from 'react';
+import { Edit2, Trash2, Save, X, Plus } from 'lucide-react';
 import Navbar from './Navbar';
 import './Notes.css';
 
-// ⭐ 1. Load Supabase here
+// ⭐ Load Supabase here
 
 export default function Notes() {
   const [notes, setNotes] = useState([]);
   const [newNote, setNewNote] = useState('');
+  const [editingId, setEditingId] = useState(null);
+  const [editingContent, setEditingContent] = useState('');
+  const [toast, setToast] = useState(null);
 
-  // ⭐ 2. Fetch Notes here
-  const fetchNotes = async () => {
+  // ⭐ Fetch Notes
+  const fetchNotes = async () => {};
 
-    //  ⭐ 2a. Make Fetch Request here
+  // ⭐ Create Note
+  const addNote = async () => {};
 
+  // ⭐ Update Note
+  const updateNote = async (id) => {};
 
-    //  ⭐ 2b. Initialise notes into set function
-
-  };
-
-  // ⭐ 3. Create Notes here
-  const addNote = async () => {
-    
-    //  ⭐ Fetch User here
-
-    
-     //  ⭐ 3a. Make Post Request here
-
-
-    // if (error) return console.error(error);
-
-    //  ⭐ 3b. Reset state
-
-    //  ⭐ 3c. Initialise notes into set function
-  };
+  // ⭐ Delete Note
+  const deleteNote = async (id) => {};
 
   useEffect(() => {
-    // ⭐ 1. Fetch All Notes here
     fetchNotes();
-
-    // ⭐ 
-
-
-    // ⭐ 
-
-    
   }, []);
+
+  const showError = (message) => {
+    setToast(message);
+    setTimeout(() => setToast(null), 3000);
+  };
 
   return (
     <>
@@ -63,19 +50,73 @@ export default function Notes() {
           />
 
           <div className="add-btn-wrapper">
-            <button className="add-btn" onClick={addNote}>Add Note</button>
+            <button className="add-btn" onClick={addNote}>
+              <Plus size={18} style={{ marginRight: '6px', verticalAlign: 'middle' }} />
+              Add Note
+            </button>
           </div>
 
           <div className="note-list">
             {notes.map((note) => (
               <div key={note.id} className="note-card">
-                <p>{note.content}</p>
-                <small>{new Date(note.inserted_at).toLocaleString()}</small>
+                {editingId === note.id ? (
+                  <div className="edit-mode">
+                    <textarea
+                      className="note-input"
+                      value={editingContent}
+                      onChange={(e) => setEditingContent(e.target.value)}
+                      style={{ marginBottom: '12px' }}
+                    />
+                    <div className="edit-actions">
+                      <button className="save-btn" onClick={() => updateNote(note.id)}>
+                        <Save size={16} style={{ marginRight: '4px', verticalAlign: 'middle' }} />
+                        Save
+                      </button>
+                      <button
+                        className="cancel-btn"
+                        onClick={() => setEditingId(null)}
+                      >
+                        <X size={16} style={{ marginRight: '4px', verticalAlign: 'middle' }} />
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="note-content">
+                    <div className="note-text">
+                      <p>{note.content}</p>
+                      <small>{new Date(note.created_at).toLocaleString()}</small>
+                    </div>
+
+                    <div className="note-actions">
+                      <button
+                        className="icon-btn edit-icon-btn"
+                        onClick={() => {
+                          setEditingId(note.id);
+                          setEditingContent(note.content);
+                        }}
+                        title="Edit note"
+                      >
+                        <Edit2 size={16} />
+                      </button>
+
+                      <button
+                        className="icon-btn delete-icon-btn"
+                        onClick={() => deleteNote(note.id)}
+                        title="Delete note"
+                      >
+                        <Trash2 size={16} />
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
         </div>
       </div>
+
+      {toast && <div className="toast">{toast}</div>}
     </>
   );
 }

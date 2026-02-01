@@ -60,9 +60,7 @@ const handleGoogleLogin = async () => {
   const { error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: import.meta.env.PROD
-        ? 'YOUR_DEPLOYED_WEBSITE_URL'
-        : 'http://localhost:5173/',
+      redirectTo: import.meta.env.VITE_REDIRECT_URL
     },
   });
   

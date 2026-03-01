@@ -28,12 +28,12 @@ This project is meant to serve as a **starting point** for applications that nee
 ---
 ## ✨ Features
 - 🔐 **Authentication**
-  - Email & password sign up
-  - Login & logout
+  - Login with google 
+  - Logout
   - Auth session handling
 - 📝 **Notes CRUD**
   - Create notes
-  - Read notes (user-specific)
+  - Read notes
   - Update notes
   - Delete notes
 ---

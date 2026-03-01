@@ -6,7 +6,7 @@ import './Navbar.css';
 
 export default function Navbar() {
 
-  // ⭐ 2. Logout function here
+  // ⭐ 4. Logout function here
   const handleLogout = async () => {
   };
 

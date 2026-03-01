@@ -33,6 +33,15 @@ This project is meant to serve as a **starting point** for applications that nee
 ---
 ## 📦 Code Segments to Include
 
+### 0. Create ENV file
+```javascript
+// ⭐ Create .env file in the root folder
+VITE_SUPABASE_URL=YOUR_SUPABASE_URL_HERE
+VITE_SUPABASE_KEY=YOUR_SUPABASE_KEY_HERE
+VITE_REDIRECT_URL=YOUR_PROJECT_URL_HERE
+
+```
+
 ### 1. Load Supabase
 ```javascript
 // ⭐ 1. Load Supabase here

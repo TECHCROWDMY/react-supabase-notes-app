@@ -5,7 +5,7 @@ import { Edit2, Trash2, Save, X, Plus } from 'lucide-react';
 import Navbar from './Navbar';
 import './Notes.css';
 
-// ⭐ Load Supabase here
+// ⭐ 1. Load Supabase here
 
 export default function Notes() {
   const [notes, setNotes] = useState([]);
@@ -14,16 +14,16 @@ export default function Notes() {
   const [editingContent, setEditingContent] = useState('');
   const [toast, setToast] = useState(null);
 
-  // ⭐ Fetch Notes
+  // ⭐ 5. Fetch Notes
   const fetchNotes = async () => {};
 
-  // ⭐ Create Note
+  // ⭐ 6. Create Note
   const addNote = async () => {};
 
-  // ⭐ Update Note
+  // ⭐ 7. Update Note
   const updateNote = async (id) => {};
 
-  // ⭐ Delete Note
+  // ⭐ 8. Delete Note
   const deleteNote = async (id) => {};
 
   useEffect(() => {

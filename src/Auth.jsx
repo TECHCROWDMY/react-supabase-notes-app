@@ -6,7 +6,7 @@ import './Auth.css';
 
 export default function Auth() {
   
-  // ⭐ 2. Login with Google
+  // ⭐ 3. Login with Google
   const handleGoogleLogin = async () => {};
 
   return (

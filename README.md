@@ -120,7 +120,7 @@ const fetchNotes = async () => {
 const addNote = async () => {
   if (!newNote.trim()) return;
 
-  // ⭐ Fetch User
+  // Fetch User
   const {
     data: { user },
     error: userError

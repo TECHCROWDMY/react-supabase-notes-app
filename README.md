@@ -14,7 +14,7 @@ npm install
 ```bash
 npm run dev
 ```
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+<small>Open [http://localhost:5173](http://localhost:5173) in your browser.</small>
 ---
 ## 🎯 Purpose
 This project is meant to serve as a **starting point** for applications that need:

@@ -33,7 +33,7 @@ This project is meant to serve as a **starting point** for applications that nee
 ---
 ## 📦 Code Segments to Include
 
-### 0. Create ENV file
+### Create ENV file
 ```javascript
 // ⭐ Create .env file in the root folder
 VITE_SUPABASE_URL=YOUR_SUPABASE_URL_HERE

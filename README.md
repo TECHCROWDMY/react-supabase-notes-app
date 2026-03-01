@@ -1,6 +1,8 @@
 # ⚡ React + Vite + Supabase Starter Template
+
 <small>A starter template built with **React** and **Vite**, designed to help you **get started quickly with Supabase**.
 This template includes **authentication** and a **simple CRUD notes system**, so you can focus on building features instead of wiring up the basics.</small>
+
 ---
 
 ## 🧑‍💻 Getting Started

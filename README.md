@@ -198,4 +198,11 @@ const deleteNote = async (id) => {
 
 
 ---
-**Built with ❤️ using React, Vite, and Supabase**
+
+## 💙 Support
+
+If this template saved you time, consider buying me a coffee — it helps me keep building and sharing free tools like this!
+
+<a href="https://www.paypal.me/thilak7c">
+  <img src="https://img.shields.io/badge/Donate-PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white" alt="Donate via PayPal" />
+</a>
